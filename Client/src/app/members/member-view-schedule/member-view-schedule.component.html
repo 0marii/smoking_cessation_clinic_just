@@ -1,0 +1,21 @@
+<div class="container" style="height: 50vh">
+  <div class="row" style="margin-top: 70px">
+    <h3>View Schedule</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 30%">Username</th>
+          <th style="width: 30%">Schedule Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let Schedule of schedules">
+          <td>{{ Schedule.userName }}</td>
+          <td>{{ Schedule.dateOfBirth | date : "longDate" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

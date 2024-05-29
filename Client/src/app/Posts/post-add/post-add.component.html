@@ -1,0 +1,25 @@
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+  <form
+    [formGroup]="registerForm"
+    autocomplete="off"
+    (ngSubmit)="registerForm.valid && register()"
+    class="p-4 p-md-5 mt-5 border rounded-3 bg-light w-75"
+  >
+    <h2 class="text-center">Add Post</h2>
+    <app-text-input
+      [formControl]="$any(registerForm.controls['description'])"
+      [label]="'description'"
+    ></app-text-input>
+    <button
+      class="w-100 btn btn-lg btn-primary"
+      [disabled]="!registerForm.valid"
+      type="submit"
+    >
+      create post
+    </button>
+    <hr class="my-4" />
+    <button class="w-100 btn btn-lg border-1" routerLink="/clinicDashbord">
+      Cancel
+    </button>
+  </form>
+</div>

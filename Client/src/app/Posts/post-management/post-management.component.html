@@ -1,0 +1,35 @@
+<div class="container mt-2" *ngIf="posts">
+  <div class="row p-0">
+    <div class="col-md-12 p-0" *ngFor="let post of posts">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ post.senderUserName }}</h3>
+          <div class="mb-1 text-muted">
+            <div class="mb-1 fs-6 text-muted">
+              {{ post.created | date : "h:mm a" }}
+              <br />
+              {{ post.created | date : "longDate" }}
+            </div>
+          </div>
+          <p class="card-text mt-2 mb-2">
+            {{ post.description }}
+          </p>
+          <div class="d-flex gap-2">
+            <button
+              class="btn btn-sm btn-warning"
+              (click)="editPost(post)"
+            >
+              <i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deletePost(post.id)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
