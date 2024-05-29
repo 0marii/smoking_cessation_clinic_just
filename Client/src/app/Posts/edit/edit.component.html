@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 120px" *ngIf="post">
+  <form
+    #editForm="ngForm"
+    id="editForm"
+    autocomplete="off"
+    (ngSubmit)="updatePost()"
+    class="d-flex mb-3 justify-content-center align-items-center flex-column mt-5"
+  >
+    <div
+      class="d-flex flex-column align-items-center w-50 border rounded-3 p-4"
+    >
+      <h2 class="mt-3 mb-4">Update Post</h2>
+
+      <div class="mb-4 w-100">
+        <label for="senderUserName" class="form-label">Sender Username</label>
+        <input
+          type="text"
+          name="senderUserName"
+          [(ngModel)]="post.senderUserName"
+          class="form-control border-1"
+          required
+          readonly
+          id="senderUserName"
+        />
+      </div>
+
+      <div class="mb-4 w-100">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control border-1"
+          [(ngModel)]="post.description"
+          name="description"
+          id="description"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <button class="mt-3 w-100 btn btn-primary" type="submit">
+        Update Post
+      </button>
+
+      <button class="mt-3 w-100 btn btn-secondary" routerLink="/clinicDashbord">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

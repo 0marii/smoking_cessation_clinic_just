@@ -1,0 +1,86 @@
+<!-- ======= Contact Section ======= -->
+<section
+  id="contact"
+  class="contact"
+  style="margin-top: 100px; margin-bottom: 100px"
+>
+  <div class="container" style="height: 200vh" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Contact Us</p>
+    </div>
+
+    <div>
+      <iframe
+        style="border: 0; width: 100%; height: 270px"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d452.68887720289246!2d35.991476797580916!3d32.49452918124776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b89381daaaca3%3A0xde73f51934b0fe26!2sJUST%20Library!5e1!3m2!1sen!2sjo!4v1716642752148!5m2!1sen!2sjo"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>JOrdan university of science & technology</p>
+            <p>Irbid, Irbid, JO</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>innovation@just.edu.jo</p>
+          </div>
+
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>(+962) 272 010 00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 mt-lg-0">
+        <form
+          [formGroup]="registerForm"
+          autocomplete="off"
+          (ngSubmit)="registerForm.valid && register()"
+          class="php-email-form"
+        >
+          <h2 class="text-center">Contact Us</h2>
+          <app-text-input
+            [formControl]="$any(registerForm.controls['userName'])"
+            [label]="'userName'"
+          ></app-text-input>
+          <app-text-input
+            [formControl]="$any(registerForm.controls['content'])"
+            [label]="'content'"
+            rows="5"
+          ></app-text-input>
+          <button
+            class="w-100 btn btn-lg btn-primary"
+            [disabled]="!registerForm.valid"
+            type="submit"
+          >
+            create post
+          </button>
+          <hr class="my-4" />
+          <button
+            class="w-100 btn btn-lg border-1"
+            routerLink="/"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Section -->
